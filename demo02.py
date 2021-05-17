@@ -2,18 +2,18 @@ from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.by import By
 
-driver=webdriver.Chrome()
-driver.get('http://www.baidu.com')
-driver.maximize_window()
-sleep(1)
-
-element=driver.find_element_by_id('kw')
-element.send_keys('selenium')
-print(type(element))
-
-driver.find_element_by_id('su').click()
-sleep(3)
-driver.quit()
+# driver=webdriver.Chrome()
+# driver.get('http://www.baidu.com')
+# driver.maximize_window()
+# sleep(1)
+#
+# element=driver.find_element_by_id('kw')
+# element.send_keys('selenium')
+# print(type(element))
+#
+# driver.find_element_by_id('su').click()
+# sleep(3)
+# driver.quit()
 
 class TestCase(object):
 
@@ -24,11 +24,10 @@ class TestCase(object):
         sleep(1)
 
     def test_id(self):
-        self.element = driver.find_element_by_id('kw')
-        self.element.send_keys('selenium')
-        print(type(element))
-
-        #id是唯一的
+        self.driver.find_element_by_id('kw').send_keys('selenium')
+        # self.element.send_keys('selenium')
+        # print(type(element))
+        # #id是唯一的
         self.driver.find_element_by_id('su').click()
         sleep(3)
         self.driver.quit()
@@ -84,11 +83,11 @@ class TestCase(object):
 
 if __name__ == '__main__':
     case = TestCase()
-    #case.test_id()
+    case.test_id()
     #case.test_name()
     #case.test_linktest()
     #case.test_partial_link_text()
     #case.test_xpath()
     #case.test_css_selector()
     #case.test_class_name()
-    case.test_all()
+    # case.test_all()
